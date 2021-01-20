@@ -37,3 +37,9 @@ $mytasks-app-theme: mat-light-theme((
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 15px;
+}
