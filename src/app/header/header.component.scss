@@ -1,0 +1,18 @@
+.header-wrapper {
+  position: relative;
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  align-items: center;
+
+  .app-title {
+    flex: 1 1 auto;
+    text-align: center;
+    font-weight: normal;
+  }
+
+  .icon-add {
+    position: absolute;
+    right: 0;
+  }
+}
