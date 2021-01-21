@@ -21,4 +21,9 @@ export class ProjectsComponent implements OnInit {
     this.projectService.getProjects()
       .subscribe(projects => this.projects = projects);
   }
+
+  updateTask(event: any, task: any): void {
+    task.is_completed = event.checked;
+    this.projectService.updateTask(task).subscribe();
+  }
 }
