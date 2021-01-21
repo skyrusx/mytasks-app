@@ -1,0 +1,85 @@
+.list-projects {
+  .project-card {
+    padding: 0;
+    color: gray;
+
+    .mat-card-header {
+      border-bottom: 1px solid #e0e0e0;
+      padding: 10px;
+
+      ::ng-deep .mat-card-header-text {
+        margin: 0 !important;
+
+        .mat-card-title {
+          margin: 0 !important;
+          font-size: 10px;
+          line-height: 14px;
+          padding-top: 5px;
+          color: #616161;
+          text-transform: uppercase;
+          font-weight: bold;
+        }
+      }
+    }
+
+    .mat-card-content {
+      padding: 20px;
+
+      .task-section {
+        ul {
+          list-style-type: none;
+          margin: unset;
+          padding: unset;
+
+          li {
+            margin-bottom: 20px;
+
+            ::ng-deep .mat-checkbox-inner-container {
+              margin-right: 20px;
+            }
+
+            ::ng-deep .mat-checkbox-checked {
+              .mat-checkbox-label {
+                text-decoration: line-through;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 575px) {
+  .list-projects {
+    display: block;
+
+    .project-card {
+      margin-bottom: 15px;
+    }
+  }
+}
+
+@media (min-width: 576px) {
+  .list-projects {
+    display: flex;
+    justify-content: space-between;
+
+    .project-card {
+      width: 33%;
+      margin: 10px;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+
+}
+
+@media (min-width: 992px) {
+
+}
+
+@media (min-width: 1200px) {
+
+}
