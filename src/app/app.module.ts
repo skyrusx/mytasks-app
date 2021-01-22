@@ -46,7 +46,6 @@ import { MatTreeModule } from '@angular/material/tree';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
-import { ModalComponent } from './modal/modal.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { TaskComponent } from './task/task.component';
 
@@ -55,12 +54,8 @@ import { TaskComponent } from './task/task.component';
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    ModalComponent,
     ProjectsComponent,
     TaskComponent
-  ],
-  entryComponents: [
-    ModalComponent
   ],
   imports: [
     BrowserModule,
