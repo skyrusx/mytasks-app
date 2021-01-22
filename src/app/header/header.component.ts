@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { ModalComponent } from '../modal/modal.component';
+import { TaskComponent } from '../task/task.component';
 
 @Component({
   selector: 'app-header',
@@ -13,6 +13,6 @@ export class HeaderComponent {
   constructor(public modal: MatDialog) {}
 
   openModal() {
-    this.modal.open(ModalComponent);
+    this.modal.open(TaskComponent);
   }
 }
