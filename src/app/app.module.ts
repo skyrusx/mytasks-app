@@ -48,6 +48,7 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { ModalComponent } from './modal/modal.component';
 import { ProjectsComponent } from './projects/projects.component';
+import { TaskComponent } from './task/task.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +56,8 @@ import { ProjectsComponent } from './projects/projects.component';
     HeaderComponent,
     FooterComponent,
     ModalComponent,
-    ProjectsComponent
+    ProjectsComponent,
+    TaskComponent
   ],
   entryComponents: [
     ModalComponent
