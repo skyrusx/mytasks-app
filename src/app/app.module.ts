@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 /** Angular Material */
 import { ReactiveFormsModule } from '@angular/forms';
@@ -97,7 +98,8 @@ import { TaskComponent } from './task/task.component';
     MatTabsModule,
     MatToolbarModule,
     MatTooltipModule,
-    MatTreeModule
+    MatTreeModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
