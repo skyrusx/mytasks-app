@@ -30,4 +30,10 @@ export class ProjectService {
     const url = `${urlPart}?is_completed=${task.is_completed}`;
     return this.http.put(url, task, this.httpOptions);
   }
+
+  /** POST: add a new task to the server */
+  addTask(task: any): Observable<any> {
+    const url = [this.baseUrl, 'todos'].join('/');
+    return this.http.post(url, task, this.httpOptions);
+  }
 }
