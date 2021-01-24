@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Validators, FormGroup, FormBuilder } from '@angular/forms';
+import { Validators, FormGroup, FormBuilder, FormControl } from '@angular/forms';
 
 import { Project } from '../project';
 import { ProjectService } from '../project.service';
@@ -18,9 +18,9 @@ export class TaskComponent implements OnInit {
     private projectService: ProjectService
   ) {
     this.addTaskForm = this.fb.group({
-      text: [null, Validators.required],
+      text: new FormControl('', [Validators.required, Validators.minLength(3)]),
       is_completed: [false],
-      project_id: [null, Validators.required]
+      project_id: new FormControl('', Validators.required)
     });
   }
 
@@ -43,5 +43,9 @@ export class TaskComponent implements OnInit {
   getProjects(): void {
     this.projectService.getProjects()
       .subscribe(projects => this.projects = projects);
+  }
+
+  get form(): any {
+    return this.addTaskForm.controls;
   }
 }
