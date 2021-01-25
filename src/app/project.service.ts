@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { environment } from '../environments/environment';
 
 import { Observable } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
@@ -9,7 +10,7 @@ import { Project } from './project';
 @Injectable({ providedIn: 'root' })
 export class ProjectService {
 
-  private baseUrl = 'https://app-mytasks.herokuapp.com';
+  private baseUrl = environment.baseUrl;
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
