@@ -1,0 +1,49 @@
+::ng-deep .mat-dialog-container {
+  padding: 0;
+  width: 400px;
+
+  .app-modal-add-project {
+    h2.mat-form-title {
+      text-align: center;
+      margin: 0;
+      border-bottom: 1px solid #e0e0e0;
+      padding: 10px;
+      font-size: 12px;
+      text-transform: uppercase;
+      font-weight: bold;
+      color: #616161;
+    }
+
+    .add-project-form {
+      padding: 24px;
+
+      .mat-form-field {
+        width: 100%;
+      }
+
+      .mat-form-actions {
+        margin-top: 5px;
+
+        button {
+          color: #ffffff;
+          text-transform: uppercase;
+          width: 49%;
+          border-radius: unset;
+          font-size: 12px;
+
+          &:first-child {
+            margin-right: 1%;
+          }
+
+          &:last-child {
+            margin-left: 1%;
+          }
+
+          &.btn-cancel {
+            background-color: #bbbbbb;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,1 +1,20 @@
-z<p>project works!</p>
+<div class="app-modal-add-project">
+  <h2 class="mat-form-title">Новая категория</h2>
+
+  <form [formGroup]="addProjectForm" (ngSubmit)="onSubmit()" class="add-project-form">
+    <mat-form-field appearance="outline">
+      <mat-label>Название категории</mat-label>
+      <input matInput formControlName="title" required>
+
+      <mat-error *ngIf="form.title.touched && form.title.invalid">
+        <div *ngIf="form.title.errors.required">Необходимо указать название категории.</div>
+        <div *ngIf="form.title.errors.minlength">Минимальная длина названия 3 символа.</div>
+      </mat-error>
+    </mat-form-field>
+
+    <div class="mat-form-actions">
+      <button mat-flat-button mat-dialog-close class="btn-cancel">Отмена</button>
+      <button mat-flat-button [mat-dialog-close]="true" color="primary" [disabled]="addProjectForm.invalid" type="submit">Ok</button>
+    </div>
+  </form>
+</div>

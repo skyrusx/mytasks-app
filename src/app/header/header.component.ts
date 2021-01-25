@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { TaskComponent } from '../task/task.component';
+import {ProjectComponent} from '../project/project.component';
 
 @Component({
   selector: 'app-header',
@@ -13,6 +13,6 @@ export class HeaderComponent {
   constructor(public modal: MatDialog) {}
 
   openModal(): void {
-    this.modal.open(TaskComponent, {autoFocus: false});
+    this.modal.open(ProjectComponent, {autoFocus: false});
   }
 }
