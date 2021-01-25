@@ -1,5 +1,12 @@
+export interface Task {
+  id: number;
+  text: string;
+  is_completed: boolean;
+  project_id: number;
+}
+
 export interface Project {
   id: number;
   title: string;
-  todos: any;
+  todos: Array<Task>;
 }
