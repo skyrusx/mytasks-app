@@ -3,6 +3,7 @@ import { Validators, FormGroup, FormBuilder, FormControl } from '@angular/forms'
 
 import { Project } from '../project';
 import { ProjectService } from '../project.service';
+import { SnackBarService } from '../snack-bar.service';
 
 @Component({
   selector: 'app-project',
@@ -15,7 +16,8 @@ export class ProjectComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private projectService: ProjectService
+    private projectService: ProjectService,
+    private snackBar: SnackBarService
   ) {
     this.addProjectForm = this.fb.group({
       title: new FormControl('', [Validators.required, Validators.minLength(3)])
@@ -31,6 +33,8 @@ export class ProjectComponent implements OnInit {
       .subscribe(project => {
         this.projects.push(project);
       });
+
+    this.snackBar.show('Категория добавлена. Обновите страницу!');
   }
 
   getProjects(): void {

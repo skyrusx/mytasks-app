@@ -5,6 +5,7 @@ import { Project } from '../project';
 import { ProjectService } from '../project.service';
 import { TaskService } from '../task.service';
 import { TaskComponent } from '../task/task.component';
+import { SnackBarService } from '../snack-bar.service';
 
 @Component({
   selector: 'app-projects',
@@ -17,7 +18,8 @@ export class ProjectsComponent implements OnInit {
   constructor(
     private projectService: ProjectService,
     private taskService: TaskService,
-    public modal: MatDialog
+    public modal: MatDialog,
+    private snackBar: SnackBarService
   ) { }
 
   ngOnInit(): void {
@@ -32,6 +34,9 @@ export class ProjectsComponent implements OnInit {
   updateTask(event: any, task: any): void {
     task.is_completed = event.checked;
     this.taskService.updateTask(task).subscribe();
+    if (task.is_completed) {
+      this.snackBar.show('Задача выполнена!');
+    }
   }
 
   openModal(): void {

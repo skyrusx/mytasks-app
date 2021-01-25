@@ -4,6 +4,7 @@ import { Validators, FormGroup, FormBuilder, FormControl } from '@angular/forms'
 import { Project } from '../project';
 import { ProjectService } from '../project.service';
 import { TaskService } from '../task.service';
+import { SnackBarService } from '../snack-bar.service';
 
 @Component({
   selector: 'app-task',
@@ -18,6 +19,7 @@ export class TaskComponent implements OnInit {
     private fb: FormBuilder,
     private projectService: ProjectService,
     private taskService: TaskService,
+    private snackBar: SnackBarService
   ) {
     this.addTaskForm = this.fb.group({
       text: new FormControl('', [Validators.required, Validators.minLength(3)]),
@@ -40,6 +42,8 @@ export class TaskComponent implements OnInit {
           console.log(error);
         }
       );
+
+    this.snackBar.show('Задача добавлена. Обновите страницу!');
   }
 
   getProjects(): void {
