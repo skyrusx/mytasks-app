@@ -12,7 +12,7 @@ export class HeaderComponent {
 
   constructor(public modal: MatDialog) {}
 
-  openModal() {
+  openModal(): void {
     this.modal.open(TaskComponent, {autoFocus: false});
   }
 }
