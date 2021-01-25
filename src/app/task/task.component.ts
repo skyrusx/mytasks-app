@@ -3,6 +3,7 @@ import { Validators, FormGroup, FormBuilder, FormControl } from '@angular/forms'
 
 import { Project } from '../project';
 import { ProjectService } from '../project.service';
+import { TaskService } from '../task.service';
 
 @Component({
   selector: 'app-task',
@@ -15,7 +16,8 @@ export class TaskComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private projectService: ProjectService
+    private projectService: ProjectService,
+    private taskService: TaskService,
   ) {
     this.addTaskForm = this.fb.group({
       text: new FormControl('', [Validators.required, Validators.minLength(3)]),
@@ -29,7 +31,7 @@ export class TaskComponent implements OnInit {
   }
 
   onSubmit(): void {
-    this.projectService.addTask(this.addTaskForm.value)
+    this.taskService.addTask(this.addTaskForm.value)
       .subscribe(
         response => {
           console.log(response);

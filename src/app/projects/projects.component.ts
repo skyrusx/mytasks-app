@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { Project } from '../project';
 import { ProjectService } from '../project.service';
+import { TaskService } from '../task.service';
 
 @Component({
   selector: 'app-projects',
@@ -11,7 +12,10 @@ import { ProjectService } from '../project.service';
 export class ProjectsComponent implements OnInit {
   projects: Project[] = [];
 
-  constructor(private projectService: ProjectService) { }
+  constructor(
+    private projectService: ProjectService,
+    private taskService: TaskService,
+  ) { }
 
   ngOnInit(): void {
     this.getProjects();
@@ -24,6 +28,6 @@ export class ProjectsComponent implements OnInit {
 
   updateTask(event: any, task: any): void {
     task.is_completed = event.checked;
-    this.projectService.updateTask(task).subscribe();
+    this.taskService.updateTask(task).subscribe();
   }
 }
