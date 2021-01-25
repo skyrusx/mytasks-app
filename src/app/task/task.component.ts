@@ -10,7 +10,7 @@ import { ProjectService } from '../project.service';
   styleUrls: ['./task.component.scss']
 })
 export class TaskComponent implements OnInit {
-  projects: Project[] | undefined;
+  projects: Project[] = [];
   addTaskForm: FormGroup;
 
   constructor(
