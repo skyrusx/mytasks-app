@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 
 import { Project } from '../project';
+import { Task } from '../project';
 import { ProjectService } from '../project.service';
 import { TaskService } from '../task.service';
 import { TaskComponent } from '../task/task.component';
@@ -14,6 +15,8 @@ import { SnackBarService } from '../snack-bar.service';
 })
 export class ProjectsComponent implements OnInit {
   projects: Project[] = [];
+  project: Project = {} as Project;
+  task: Task = {} as Task;
 
   constructor(
     private projectService: ProjectService,
@@ -41,5 +44,13 @@ export class ProjectsComponent implements OnInit {
 
   openModal(): void {
     this.modal.open(TaskComponent, {autoFocus: false});
+  }
+
+  trackByFn(index: number, project: Project): number {
+    return project.id;
+  }
+
+  trackByFnT(index: number, task: Task): number {
+    return task.id;
   }
 }

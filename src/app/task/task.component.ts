@@ -13,6 +13,7 @@ import { SnackBarService } from '../snack-bar.service';
 })
 export class TaskComponent implements OnInit {
   projects: Project[] = [];
+  project: Project = {} as Project;
   addTaskForm: FormGroup;
 
   constructor(
@@ -53,5 +54,9 @@ export class TaskComponent implements OnInit {
 
   get form(): any {
     return this.addTaskForm.controls;
+  }
+
+  trackByFn(index: number, item: Project): number {
+    return item.id;
   }
 }

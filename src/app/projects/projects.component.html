@@ -1,6 +1,6 @@
 <div class="container container-projects">
   <div class="list-projects">
-    <mat-card class="project-card" *ngFor="let project of projects">
+    <mat-card class="project-card" *ngFor="let project of projects; trackBy: trackByFn">
         <button mat-icon-button matTooltip="Добавить задачу" class="icon-add" (click)="openModal()" color="primary">
         <mat-icon>add_circle</mat-icon>
       </button>
@@ -12,7 +12,7 @@
         <section class="task-section">
           <span class="task-list-section">
             <ul>
-              <li *ngFor="let task of project.todos">
+              <li *ngFor="let task of project.todos; trackBy: trackByFnT">
                 <mat-checkbox [checked]="task.is_completed" (change)="updateTask($event, task)">
                   {{ task.text }}
                 </mat-checkbox>

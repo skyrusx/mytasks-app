@@ -15,7 +15,7 @@
     <mat-form-field appearance="outline">
       <mat-label>Категория</mat-label>
       <mat-select formControlName="project_id" required>
-        <mat-option *ngFor="let project of projects" [value]="project.id">
+        <mat-option *ngFor="let project of projects; trackBy: trackByFn" [value]="project.id">
           {{ project.title }}
         </mat-option>
       </mat-select>
