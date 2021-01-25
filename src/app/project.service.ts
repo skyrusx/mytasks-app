@@ -11,6 +11,7 @@ import { Project } from './project';
 export class ProjectService {
 
   private baseUrl = environment.baseUrl;
+  private projectUrl = this.baseUrl + '/projects';
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -22,11 +23,11 @@ export class ProjectService {
 
   /** GET projects from the server */
   getProjects(): Observable<Project[]> {
-    return this.http.get<Project[]>(this.baseUrl + '/projects');
+    return this.http.get<Project[]>(this.projectUrl);
   }
 
   /** POST: add a new project to the server */
   addProject(project: Project): Observable<Project> {
-    return this.http.post<Project>(this.baseUrl + '/projects', project, this.httpOptions);
+    return this.http.post<Project>(this.projectUrl, project, this.httpOptions);
   }
 }
