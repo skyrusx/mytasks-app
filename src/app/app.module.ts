@@ -49,6 +49,7 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { TaskComponent } from './task/task.component';
+import { ProjectComponent } from './project/project.component';
 
 @NgModule({
   declarations: [
@@ -56,7 +57,8 @@ import { TaskComponent } from './task/task.component';
     HeaderComponent,
     FooterComponent,
     ProjectsComponent,
-    TaskComponent
+    TaskComponent,
+    ProjectComponent
   ],
   imports: [
     BrowserModule,
